@@ -1,0 +1,32 @@
+MAILBOX_FAIL_USE_TIME_LIMIT	Updating Mailbox. Please try again later.
+MAILBOX_POST_ALL_DELETE_FAIL_EMPTY	No messages
+MAILBOX_POST_ALL_DELETE_QUESTION1	Delete all messages?
+MAILBOX_POST_ALL_DELETE_QUESTION2	Messages with attachments will not be deleted.
+MAILBOX_POST_ALL_GET_ITEMS_FAIL_EMPTY	You don't have any messages with attachments in your mailbox.
+MAILBOX_POST_ALL_GET_ITEMS_QUESTION	Accept attachment? (Minus 5% tax on Yang)
+MAILBOX_POST_DELETE_FAIL_EXIST_ITEMS	The message could not be deleted. Please accept the attachment first.
+MAILBOX_POST_DELETE_QUESTION	Do you really want to delete this message?
+MAILBOX_POST_GET_ITEMS_NOT_ENOUGHT_INVENTORY	Items could not be accepted. Your inventory is full.
+MAILBOX_POST_GET_ITEMS_QUESTION	Accept attachment? (Minus 5% tax on Yang)
+MAILBOX_POST_GET_ITEMS_WON_OVERFLOW	You cannot accept any more Won.
+MAILBOX_POST_GET_ITEMS_YANG_OVERFLOW	You cannot accept any more Yang.
+MAILBOX_POST_GM_ARRIVE	GM Message
+MAILBOX_POST_NOT_CONFIRM_INFO_1	Unread messages: %d
+MAILBOX_POST_NOT_CONFIRM_INFO_2	Without attachment: %d / With attachment: %d
+MAILBOX_POST_READ_BLOCK	Are you sure you want to block %s?
+MAILBOX_POST_WRITE_ALREADY_ITEM	You can only send one item per message.
+MAILBOX_POST_WRITE_CAN_NOT_SPLIT_ITEM	Split the stacked items in your inventory before attaching one to the message.
+MAILBOX_POST_WRITE_CONFIRM_FAIL	Unknown recipient. The message could not be sent.
+MAILBOX_POST_WRITE_CONFIRM_FULL_MAILBOX	The recipient's mailbox is full. The message could not be sent.
+MAILBOX_POST_WRITE_LEVEL_LIMIT	You can send messages from level 20.
+MAILBOX_POST_WRITE_MONEY_NOT_ENOUGHT	You don't have enough Yang to send this message.
+MAILBOX_POST_WRITE_NAME_CHECK	Confirm the recipient's name by clicking on Check Recipient.
+MAILBOX_POST_WRITE_NAME_EMPTY	Enter the recipient.
+MAILBOX_POST_WRITE_QUESTION1	Do you want to send the message to %s now?
+MAILBOX_POST_WRITE_QUESTION2	Delivery fee: %d Yang
+MAILBOX_POST_WRITE_SEND_FAIL_EMPTY_NAME	Enter a recipient.
+MAILBOX_POST_WRITE_SEND_FAIL_EMPTY_TITLE	Enter a subject.
+MAILBOX_POST_WRITE_SEND_MONEY_TITLE	Money
+MAILBOX_POST_WRITE_WRONG_ITEM	You cannot send soulbound items.
+MAILBOX_POST_WRITE_WRONG_MESSAGE	The message contains impermissible words.
+MAILBOX_POST_WRITE_WRONG_TITLE	The subject contains impermissible words.
