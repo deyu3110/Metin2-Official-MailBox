@@ -81,7 +81,19 @@ void CClientManager::QUERY_MAILBOX_CHECK_NAME(CPeer* pkPeer, DWORD dwHandle, TMa
 		std::memcpy(t.szName, p->szName, sizeof(t.szName));
 		auto it = m_map_mailbox.find(p->szName);
 		if (it != m_map_mailbox.end())
-			t.Index = static_cast<BYTE>(it->second.size());
+		{
+			const __time32_t now = time(nullptr);
+			for (const SMailBoxTable& mail : it->second)
+			{
+				if (mail.bIsDeleted)
+					continue;
+
+				if (std::difftime(mail.Message.DeleteTime, now) <= 0)
+					continue;
+
+				t.Index++;
+			}
+		}
 	}
 
 	pkPeer->EncodeHeader(HEADER_DG_RESPOND_MAILBOX_CHECK_NAME, dwHandle, sizeof(TMailBox));
