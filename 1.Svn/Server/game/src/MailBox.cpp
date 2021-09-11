@@ -81,12 +81,6 @@ void CMailBox::Write(const char* const szName, const char* const szTitle, const 
 	const LPDESC d = Owner->GetDesc();
 	if (d == nullptr)
 		return;
-
-	if (mapMailCount[szName] >= MAILBOX_MAX_MAIL)
-	{
-		ServerProcess(EMAILBOX_GC::MAILBOX_GC_POST_WRITE, EMAILBOX_POST_WRITE::POST_WRITE_FULL_MAILBOX);
-		return;
-	}
 	
 	const int TotalYang = iYang + EMAILBOX::MAILBOX_PRICE_YANG;
 	if (TotalYang > Owner->GetGold())
@@ -172,8 +166,6 @@ void CMailBox::Write(const char* const szName, const char* const szTitle, const 
 #if defined(WJ_CHEQUE_SYSTEM)
 	Owner->PointChange(POINT_CHEQUE, -iWon);
 #endif
-	
-	mapMailCount[szName]++;
 
 	db_clientdesc->DBPacket(HEADER_GD_MAILBOX_WRITE, d->GetHandle(), &p, sizeof(p));
 	ServerProcess(EMAILBOX_GC::MAILBOX_GC_POST_WRITE, EMAILBOX_POST_WRITE::POST_WRITE_OK);
@@ -316,9 +308,6 @@ void CMailBox::CheckPlayerResult(const TMailBox* t)
 		if (t->Index >= MAILBOX_MAX_MAIL)
 			arg = EMAILBOX_POST_WRITE::POST_WRITE_FULL_MAILBOX;
 	}
-
-	if (arg == EMAILBOX_POST_WRITE::POST_WRITE_OK)
-		mapMailCount[t->szName] = t->Index; // Update Mail Count
 
 	ServerProcess(EMAILBOX_GC::MAILBOX_GC_POST_WRITE_CONFIRM, arg);
 }

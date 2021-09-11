@@ -49,11 +49,8 @@ public:
 	using MailVec = std::vector <TMailBoxTable>;
 	MailVec& GetMailVec() { return vecMailBox; }
 
-	using MailCountMap = std::unordered_map<std::string, BYTE>;
-
 private:
 	MailVec vecMailBox;
-	MailCountMap mapMailCount; // we can't use db to check player mail count every time. so we will use this map
 	LPCHARACTER Owner;
 
 private:
